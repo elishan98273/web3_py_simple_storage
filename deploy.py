@@ -1,5 +1,5 @@
 from solcx import compile_standard, install_solc
-
+import json
 
 
 with open("./SimpleStorage.sol", "r") as file:
@@ -24,3 +24,5 @@ compiled_sol = compile_standard(
     },
     solc_version="0.6.0",
 )
+with open("compiled_code.json", "w") as file:
+    json.dump(compiled_sol, file) #will take compiled_sol json file and dump it here, but will keep it in the json syntax
